@@ -1,0 +1,2813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="https://i.imgur.com/BBQoUA8.png">
+    <title>Spirit | Giveaway</title>
+    <script src="./index_files/jquery-3.7.1.min.js"></script>
+    <script src="./index_files/jquery-ui.min.js"></script>
+    <style>
+        @media (max-width: 480px) {
+            .buttonopen {
+                margin-top: 50px
+            }
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sponsors {
+            padding: 0;
+            margin: 0 0 16px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sponsors .item {
+            width: 38px;
+            height: 38px;
+            flex-basis: 38px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .footer p {
+            opacity: .4;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #ecedee
+        }
+
+        ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 0px;
+            border-radius: 0px;
+            background-color: #f5c105;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #56999f;
+        }
+
+        ::-webkit-resizer {
+            background-image: url('');
+            background-repeat: no-repeat;
+            width: 4px;
+            height: 0px
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        #sticky-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .topback {
+            /* background:url(https://olymp.msu.ru/file/user/school/proving_doc_copy/585619/e72487a8-850a-40e7-9771-2f258928e4d0.png); */
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding-bottom: 30px;
+        }
+
+        .market_listing_item_name_block {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold
+        }
+
+        .market_listing_owner_avatar {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 17px;
+            line-height: 0;
+        }
+
+        .market_listing_action_buttons {
+            float: right;
+            height: 74px;
+            width: 100px;
+            text-align: center;
+            padding-right: 10px;
+            padding-left: 10px;
+            border-left: 1px solid transparent;
+        }
+
+        .market_listing_seller {
+            float: right;
+            width: 89px;
+        }
+
+        .market_listing_row {
+            overflow: hidden;
+            clear: left;
+            position: relative;
+
+            border: 1px solid rgba(0, 0, 0, 0);
+            margin-top: 10px;
+            white-space: nowrap;
+        }
+
+        .playerAvatar img,
+        .friend_block_holder .friend_block_avatar img,
+        .friend_activity .friend_block_avatar img {
+            width: 32px;
+            height: 32px;
+            padding: 1px;
+            border-radius: 50%;
+            border: none;
+        }
+
+        .market_listing_item_img {
+            float: left;
+            width: 62px;
+            height: 62px;
+            margin: 5px;
+            border-radius: 50%;
+            border: 1px solid rgb(255, 255, 255);
+            background: rgb(2, 0, 36);
+            background: linear-gradient(120deg, rgba(2, 0, 36, 1) 0%, rgba(62, 62, 60, 1) 0%, rgba(24, 24, 24, 1) 100%);
+        }
+
+        .top_player {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            left: 11px;
+            top: 7px;
+
+            background: #EE0E0E;
+        }
+
+        .topwin_text {
+
+            font-size: 60px;
+            text-align: center
+        }
+
+        .topwin {
+            width: 100%;
+            width: 500px;
+            margin: 0 auto;
+
+            margin-top: 100px;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(120deg, rgba(2, 0, 36, 1) 0%, rgba(255, 210, 3, 1) 0%, rgba(254, 171, 5, 1) 100%);
+            border-radius: 15px;
+
+
+
+
+        }
+
+        @media (max-width: 480px) {
+            .topwin {
+                width: 100%;
+                width: auto;
+                margin: 0 auto;
+                margin-top: 30px;
+
+            }
+        }
+
+        :root {
+            --blue: #007bff;
+            --indigo: #6610f2;
+            --purple: #6f42c1;
+            --pink: #e83e8c;
+            --red: #dc3545;
+            --orange: #fd7e14;
+            --yellow: #ffc107;
+            --green: #28a745;
+            --teal: #20c997;
+            --cyan: #17a2b8;
+            --white: #fff;
+            --gray: #6c757d;
+            --gray-dark: #343a40;
+            --primary: #007bff;
+            --secondary: #6c757d;
+            --success: #28a745;
+            --info: #17a2b8;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --breakpoint-xs: 0;
+            --breakpoint-sm: 576px;
+            --breakpoint-md: 768px;
+            --breakpoint-lg: 992px;
+            --breakpoint-xl: 1200px;
+            --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+        }
+
+        *,
+        :after,
+        :before {
+            box-sizing: border-box
+        }
+
+        html {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        }
+
+        article,
+        aside,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        main,
+        nav,
+        section {
+            display: block
+        }
+
+        body {
+            margin: 0;
+            font-family: Rajdhani;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #ffffff;
+
+            text-align: left;
+            background-color: #fff
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0;
+            margin-bottom: .5rem
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem
+        }
+
+        .goauth {
+            background-color: #ed6502;
+            border-radius: 15px;
+            padding: 16px 52px;
+            border: none;
+            font-family: Rajdhani;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 167%;
+            color: #fff;
+            transition: all .5s ease
+        }
+
+        .goauth:hover {
+            box-shadow: 0 0 8px #ed6502
+        }
+
+        @media (max-width: 480px) {
+            .goauth {
+                font-size: 15px;
+
+            }
+        }
+
+        .luck {
+            margin-top: 300px;
+
+            background-color: #ed6502;
+            border-radius: 15px;
+            padding: 8px 78px;
+            cursor: pointer;
+            border: none;
+            font-family: Rajdhani;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 167%;
+            color: #fff;
+            transition: all .5s ease;
+            box-shadow: 1px 1px 4px 0px #000000;
+            box-shadow: 0px 4px 11px 0px #00000040;
+            box-shadow: rgba(255, 127, 80, 0.5) 0px 0px 30px 0px;
+            background: conic-gradient(from -3.29deg at 100% -13%, rgb(255, 165, 2) 0deg, rgb(255, 99, 72) 360deg);
+        }
+
+        .luck:hover {
+            box-shadow: 0 0 8px #ed6502;
+        }
+
+        .getcase {
+            margin-top: 80px;
+            background-color: #ed6502;
+            border-radius: 10px;
+            padding: 18px 82px;
+            border: none;
+            font-family: Rajdhani;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 167%;
+            color: #fff;
+            transition: all .5s ease
+        }
+
+        .getcase:hover {
+            box-shadow: 0 0 8px #ed6502;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            background-color: transparent
+        }
+
+        img {
+            border-style: none
+        }
+
+        img,
+        svg {
+            vertical-align: middle
+        }
+
+        button {
+            border-radius: 0
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit
+        }
+
+        button,
+        input {
+            overflow: visible
+        }
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        [type=button],
+        [type=reset],
+        [type=submit],
+        button {
+            -webkit-appearance: button
+        }
+
+        [type=button]:not(:disabled),
+        [type=reset]:not(:disabled),
+        [type=submit]:not(:disabled),
+        button:not(:disabled) {
+            cursor: pointer
+        }
+
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: .5rem;
+            font-weight: 500;
+            line-height: 1.2;
+            font-family: Rajdhani;
+            font-weight: bold;
+        }
+
+        .h1,
+        h1 {
+            font-size: 2.5rem
+        }
+
+        .h2,
+        h2 {
+            font-size: 2rem;
+            font-family: Rajdhani;
+            font-weight: bold;
+        }
+
+        body {
+            background: #111013;
+            font-family: Rajdhani, serif;
+            width: 100%;
+        }
+
+
+        .section-gamer-info .content-box {
+            background: url(/index_files/44717ab366ab47491a906a5cf8ae1387.jfif);
+            background-size: cover;
+            background-repeat: no-repeat;
+
+            width: 100%;
+            max-width: 100%;
+
+        }
+
+        .section-knife .ittem {
+            width: auto;
+            height: 100%;
+            margin: 15px;
+            margin: 12px -50px 10px;
+        }
+
+        .section-knife {
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media screen and (max-width:768px) {
+            .section-knife .ittem img {
+                max-width: 100dvw;
+                height: auto !important;
+            }
+        }
+
+        .section-knife .bg {
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            transform: translate(0, -50%);
+            max-width: calc(100vw - 19px);
+            margin: 9px 13px 5px 9px;
+        }
+
+
+
+        body {
+            font-family: BebasNeue, Roboto, Open Sans, Helvetica Neue, sans-serif
+        }
+
+        .container {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .container,
+        .container-fluid {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .container {
+            width: 1440px;
+            max-width: 100%;
+            padding-left: 8vw;
+            padding-right: 8vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 991px) {
+            .container {
+                width: 100vw;
+                max-width: 90vw;
+                padding-left: 5vw;
+                padding-right: 5vw;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                width: 100vw;
+                max-width: 95vw;
+                padding-left: 2.5vw;
+                padding-right: 2.5vw;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+
+
+        .container {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media only screen and (min-width: 48em) {
+            .container {
+                width: 49rem;
+            }
+        }
+
+        @media only screen and (min-width: 64em) {
+            .container {
+                width: 65rem;
+            }
+        }
+
+        @media only screen and (min-width: 75em) {
+            .container {
+                width: 76rem;
+            }
+        }
+
+        footer .container[data-v-7ff306fa] {
+            position: relative;
+        }
+
+        .container,
+        .container-fluid {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .container-fluid {
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }
+
+        .container {
+            width: 1440px;
+            max-width: 100%;
+            padding-left: 8vw;
+            padding-right: 8vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 991px) {
+            .container {
+                width: 100vw;
+                max-width: 90vw;
+                padding-left: 5vw;
+                padding-right: 5vw;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                width: 100vw;
+                max-width: 95vw;
+                padding-left: 2.5vw;
+                padding-right: 2.5vw;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .roullete_container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            min-height: 1000px;
+            font-family: Rajdhani;
+        }
+
+        .roullete_container {
+            min-height: 800px;
+            position: relative;
+            padding-bottom: 160px;
+        }
+
+
+        }
+
+        @media (min-width: 480px) {
+            .heading-12 {
+                font-size: 9px;
+            }
+        }
+
+        .block-hero .title[data-v-9679788a] {
+            margin-bottom: 0.25em;
+        }
+
+        @media (min-width: 1800px) {
+            .block-hero .title[data-v-9679788a] {
+                font-size: 120px;
+            }
+        }
+
+        .t_case img {
+            width: 250px;
+        }
+
+        .r_res a img {
+            width: 30px !important;
+            margin-right: 5px;
+        }
+
+        .t_case {
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .t_case_open {
+
+            color: #fff;
+        }
+
+        .t_case {
+            position: absolute;
+
+
+
+
+
+
+
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .roullete_container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            min-height: 1000px;
+        }
+
+        .roullete_container {
+            min-height: 750px;
+            position: relative;
+            padding-bottom: 160px;
+        }
+
+        .div {
+            border-bottom: 4px solid #ed6502;
+        }
+
+        .wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .div .corner {
+            position: absolute;
+            border: 2px solid #fff;
+            width: 20px;
+            height: 20px;
+            opacity: .6;
+        }
+
+        .div .corner:nth-child(1) {
+            left: -7px;
+            top: -7px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .div .corner:nth-child(2) {
+            right: -7px;
+            top: -7px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .div .corner:nth-child(3) {
+            right: -7px;
+            bottom: -7px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .div .corner:nth-child(4) {
+            left: -7px;
+            bottom: -7px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .wrapper::after {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            background-color: #e24645;
+        }
+
+        .roll {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            transform: translateX(0);
+        }
+
+        .roll_anim {
+            transition: all 6s ease-out;
+            transform: translateX(-2768px);
+        }
+
+        @media screen and (max-width: 970px) {
+            .line {
+                text-align: center !important;
+            }
+
+            .roll_anim {
+                transform: translateX(-3175px);
+            }
+        }
+
+        .item {
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-basis: 120px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            height: 160px;
+            border-radius: 3px;
+            margin: 0 5px;
+            position: relative;
+            flex-direction: column;
+        }
+
+        .item-img {
+            margin: 15px 0;
+            width: 95px;
+            height: 95px;
+        }
+
+        .item-img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .item-name {
+            color: #fff;
+            font-size: 12px;
+            bottom: 10px;
+            width: 100%;
+            padding: 0 5px;
+            text-align: center;
+        }
+
+        .item.covert {
+            background: linear-gradient(45deg, rgba(224, 0, 0, 0.32), rgb(75 25 83));
+        }
+
+        .item.knife {
+            background: linear-gradient(45deg, rgb(224 127 34), rgba(43, 43, 51, 0.68));
+        }
+
+        .item.classified {
+            background: linear-gradient(45deg, #9808cd, rgba(43, 43, 51, 0.68));
+        }
+
+        .item.restricted {
+            background: linear-gradient(45deg, #8100ff, rgba(43, 43, 51, 0.68));
+        }
+
+        .item.milspec {
+            background: linear-gradient(45deg, #0b00a1, rgba(43, 43, 51, 0.68));
+        }
+
+        #r_result_container {
+            width: 100%;
+        }
+
+        #r_result {
+            padding: 25px;
+            background: linear-gradient(180deg, #B43D00 0%, #4E1A00 100%);
+            /* background-color: #b43d00; */
+            display: flex;
+            border-radius: 15px;
+        }
+
+        #r_result_container {
+            position: absolute;
+            left: 50%;
+            top: -5%;
+            transform: translateX(-50%);
+            display: flex;
+            border-radius: 8px;
+            justify-content: center;
+        }
+
+        #r_result div {
+            height: 100%;
+            flex-basis: 0;
+            flex: 1 1 0;
+        }
+
+        #roulette_app {
+            position: relative;
+            width: 100%;
+        }
+
+        .r_res {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: Rajdhani;
+            font-weight: bold;
+
+        }
+
+        .r_res img {
+            width: unset !important;
+            max-height: 250px;
+        }
+
+        .r_res h2 {
+            font-size: 1.6rem;
+        }
+
+        .r_res a img {
+            width: 30px !important;
+            margin-right: 5px;
+        }
+
+        .win-modal::after {
+            content: "";
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.6;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+
+        .win-modal {
+            position: fixed;
+            background-color: #3dc3ff;
+            width: 500px;
+            height: auto;
+            border-radius: 3px;
+            left: calc(50% - 250px);
+            top: calc(50% - 230px);
+            color: #e24645;
+            padding-top: 60px;
+            z-index: 300;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .win-modal .row {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .win-modal .row h3 {
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 24px !important;
+            font-weight: 700;
+        }
+
+        .win-modal h3 {
+            text-transform: uppercase;
+            color: #fff !important;
+            font-weight: 700;
+        }
+
+        .win-modal-img {
+            width: 30%;
+            margin: 0 auto;
+        }
+
+        .win-modal-img img {
+            width: 100%;
+        }
+
+        .win-modal-name h2 {
+            color: #fff;
+            font-weight: 700 !important;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .win-modal-name p {
+            color: #fff;
+            font-weight: 700 !important;
+            text-align: center;
+            font-size: 14px;
+            line-height: 32px;
+        }
+
+        .show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .heading-12 {
+            font-weight: 700;
+            letter-spacing: 1%;
+            line-height: 1.05;
+            margin-bottom: 0.75em;
+            font-family: var(--font-family-primary);
+            font-size: 70px;
+        }
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            .heading-12 {
+                font-size: 12px;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./index_files/css2" rel="stylesheet">
+    <style>
+        .rajdhani-light {
+            font-family: "Rajdhani", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .rajdhani-regular {
+            font-family: "Rajdhani", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .rajdhani-medium {
+            font-family: "Rajdhani", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .rajdhani-semibold {
+            font-family: "Rajdhani", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .rajdhani-bold {
+            font-family: "Rajdhani", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .section-knife {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            position: relative;
+        }
+
+        .ittem {
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .section-main {
+            min-height: 100dvh;
+            background: url(/index_files/7.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .section-main::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            height: 2px;
+            width: 100%;
+            background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 51%, #ffffff 100%);
+        }
+
+        @media (max-width: 480px) {
+            .section-main {
+                min-height: 100dvh;
+                /* background: url(https://i.ibb.co/3SzqFNw/Frame-4-1.png); */
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+            }
+        }
+
+        .section-main .header {
+            padding: 15px;
+            background: rgba(26, 28, 47, 0.2);
+            text-align: center;
+        }
+
+        .h-img {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .section-main .center {
+            position: absolute;
+            top: 50%;
+            left: 1%;
+            right: 1%;
+            max-width: 600px;
+            transform: translateY(-55%);
+            color: #fff;
+        }
+
+        .section-main .center button:hover {
+            box-shadow: 0 0 8px #ed6502;
+        }
+
+        .section-main .center h1 span {
+            background: #fcfcfc;
+            padding-left: 35px;
+            padding-right: 35px;
+            border-radius: 9px;
+            color: #000000;
+            box-shadow: 1px 1px 1px 0px #000000;
+        }
+
+        .section-main .center h1 {
+            font-family: Rajdhani;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 50px;
+            line-height: 80px;
+        }
+
+        @media (min-width: 0) and (max-width: 760px) {
+            .section-main .center {
+                text-align: center;
+                top: 10%;
+                transform: none;
+            }
+
+            .section-main::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 0;
+            }
+
+            .h-img {
+                max-width: 100%;
+                z-index: 0;
+            }
+
+            .section-main .center h1 {
+                font-size: 42px;
+                line-height: 52px;
+            }
+        }
+
+        .section-main .center h2 {
+            margin-top: 25px;
+            font-family: Rajdhani;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 167%;
+        }
+
+        .section-main .center h2 span {
+            color: #ed6502;
+            text-align: center;
+        }
+
+        .section-main .center button {
+            margin-top: 50px;
+            background-color: #ed6502;
+            border-radius: 10px;
+            padding: 18px 82px;
+            border: none;
+            font-family: Rajdhani;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 167%;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        @media all {
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:after,
+            :before {
+                outline: 0 !important;
+                box-sizing: border-box;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:after,
+            :before {
+                box-sizing: border-box;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq iframe {
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                margin: 0;
+                padding: 0;
+                vertical-align: baseline;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:after {
+                border: 0;
+                font-weight: 400;
+                -webkit-text-decoration: none;
+                text-decoration: none;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:before {
+                border: 0;
+                font-weight: 400;
+                -webkit-text-decoration: none;
+                text-decoration: none;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq {
+                font-family: Inter, Roboto, sans-serif;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq input {
+                font-family: Inter, Roboto, sans-serif;
+                font-size: 1.4rem;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq {
+                min-height: 0;
+                min-width: 0;
+                scrollbar-color: rgba(96, 117, 159, 0.4) transparent;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:hover {
+                scrollbar-width: thin;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:hover {
+                scrollbar-color: rgba(96, 117, 159, 0.6) transparent;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq::selection {
+                background: #11899c;
+                color: #fff;
+            }
+
+            @media (hover: hover),
+            (min-width: 1024px) {
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-track {
+                    background: 0 0;
+                    border-radius: 0.8rem;
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar {
+                    background-color: transparent;
+                    height: 6px;
+                    width: 6px;
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-thumb {
+                    background-color: transparent;
+                    border-radius: 0.8rem;
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq:hover::-webkit-scrollbar-thumb {
+                    background-color: rgba(96, 117, 159, 0.4);
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-thumb:hover {
+                    background-color: rgba(96, 117, 159, 0.5);
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-thumb:active {
+                    background-color: rgba(96, 117, 159, 0.6);
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-corner {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        @media all {
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:before {
+                outline: 0 !important;
+                box-sizing: border-box;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:after {
+                outline: 0 !important;
+                box-sizing: border-box;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:after {
+                border: 0;
+                font-weight: 400;
+                -webkit-text-decoration: none;
+                text-decoration: none;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:before {
+                border: 0;
+                font-weight: 400;
+                -webkit-text-decoration: none;
+                text-decoration: none;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq {
+                font-family: Inter, Roboto, sans-serif;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq {
+                min-height: 0;
+                min-width: 0;
+                scrollbar-color: rgba(96, 117, 159, 0.4) transparent;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:hover {
+                scrollbar-width: thin;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:hover {
+                scrollbar-color: rgba(96, 117, 159, 0.6) transparent;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq::selection {
+                background: #11899c;
+                color: #fff;
+            }
+
+            @media (hover: hover),
+            (min-width: 1024px) {
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-track {
+                    background: 0 0;
+                    border-radius: 0.8rem;
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar {
+                    background-color: transparent;
+                    height: 6px;
+                    width: 6px;
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-thumb {
+                    background-color: transparent;
+                    border-radius: 0.8rem;
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq:hover::-webkit-scrollbar-thumb {
+                    background-color: rgba(96, 117, 159, 0.4);
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-thumb:hover {
+                    background-color: rgba(96, 117, 159, 0.5);
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-thumb:active {
+                    background-color: rgba(96, 117, 159, 0.6);
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-corner {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        @media all {
+            .leuuwpfsidhdjhedauydpvjcuelgdytq {
+                scrollbar-color: rgba(96, 117, 159, 0.4) transparent;
+                min-height: 0;
+                min-width: 0;
+                scrollbar-color: rgba(96, 117, 159, 0.4) transparent;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq {
+                font-family: Inter, Roboto, sans-serif;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:after {
+                -webkit-text-decoration: none;
+                border: 0;
+                box-sizing: border-box;
+                font-weight: 400;
+                outline: 0 !important;
+                -webkit-text-decoration: none;
+                text-decoration: none;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:before {
+                -webkit-text-decoration: none;
+                border: 0;
+                box-sizing: border-box;
+                font-weight: 400;
+                outline: 0 !important;
+                -webkit-text-decoration: none;
+                text-decoration: none;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:hover {
+                scrollbar-width: thin;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq:hover {
+                scrollbar-color: rgba(96, 117, 159, 0.6) transparent;
+            }
+
+            .leuuwpfsidhdjhedauydpvjcuelgdytq::selection {
+                background: #11899c;
+                color: #fff;
+            }
+
+            @media (hover: hover),
+            (min-width: 1024px) {
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-track {
+                    background: 0 0;
+                    border-radius: 0.8rem;
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar {
+                    background-color: transparent;
+                    height: 6px;
+                    width: 6px;
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-thumb {
+                    background-color: transparent;
+                    border-radius: 0.8rem;
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq:hover::-webkit-scrollbar-thumb {
+                    background-color: rgba(96, 117, 159, 0.4);
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-thumb:hover {
+                    background-color: rgba(96, 117, 159, 0.5);
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-thumb:active {
+                    background-color: rgba(96, 117, 159, 0.6);
+                }
+
+                .leuuwpfsidhdjhedauydpvjcuelgdytq::-webkit-scrollbar-corner {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        .qhgdkbxhmgqbllqozdccrgmirelovyua {
+            border: 0;
+            font: inherit;
+            padding: 0;
+            scrollbar-width: thin;
+            box-sizing: border-box;
+            outline: 0 !important;
+            text-decoration: none;
+            scrollbar-color: rgba(96, 117, 159, 0.4) transparent;
+            min-height: 0;
+            min-width: 0;
+            cursor: default;
+        }
+
+        .leuuwpfsidhdjhedauydpvjcuelgdytq {
+            max-width: 1050px;
+            max-height: 670px;
+            width: 60%;
+            height: calc(100% - 187px);
+            position: fixed;
+            top: 50px;
+            left: 100px;
+            z-index: 100000000;
+            font-family: Segoe UI !important;
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .clytbmcnqajkworobvsuexwrniawuzit {
+            position: relative;
+            width: 100%;
+            height: 33px;
+            line-height: 31px;
+            cursor: default;
+            user-select: none;
+            font-family: Segoe UI !important;
+        }
+
+        .qhgdkbxhmgqbllqozdccrgmirelovyua {
+            width: 17px;
+            height: 17px;
+            margin: 8px 6px 0 8px;
+            float: left;
+            background-size: contain;
+            background-image: url(data:image/png;base64,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);
+        }
+
+        .stxvygrgeyrieuumicmrtcecmfpyukck {
+            line-height: 31px;
+            font-size: 13px;
+            font-family: Segoe UI !important;
+            color: #000;
+            float: left;
+            font-weight: 400;
+        }
+
+        .gjvkqcqcbcgzubfhhtofybhyqyybxcxq {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 33px;
+        }
+
+        .phbroivoarklmnnrfbquwpcvkytjiozf {
+            display: inline-block;
+            width: 46px;
+            height: 30px;
+            position: relative;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        .phbroivoarklmnnrfbquwpcvkytjiozf:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .ruuxfkezhhthqctubojydccpukrstyre:after {
+            content: "";
+            width: 10px;
+            height: 1px;
+            position: absolute;
+            top: calc(50% - 1px);
+            left: calc(50% - 5px);
+            background-color: #000;
+        }
+
+        .gghpeobxoagzkctykdmvnlydplcxgrvj:after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            top: calc(50% - 6px);
+            left: calc(50% - 4px);
+            border: 1px solid #000;
+        }
+
+        .phwzasqfqmpkpuleeistdlbndqqiymvc:hover {
+            background-color: #ff0000;
+        }
+
+        .phwzasqfqmpkpuleeistdlbndqqiymvc:after {
+            content: "";
+            width: 1px;
+            height: 12px;
+            position: absolute;
+            top: calc(50% - 6px);
+            left: calc(50% - 1px);
+            background-color: #000;
+            transform: rotate(45deg);
+        }
+
+        .phwzasqfqmpkpuleeistdlbndqqiymvc:before {
+            content: "";
+            width: 1px;
+            height: 12px;
+            position: absolute;
+            top: calc(50% - 6px);
+            left: calc(50% - 1px);
+            background-color: #000;
+            transform: rotate(-45deg);
+        }
+
+        .phwzasqfqmpkpuleeistdlbndqqiymvc:hover:after {
+            background-color: #fff;
+        }
+
+        .phwzasqfqmpkpuleeistdlbndqqiymvc:hover:before {
+            background-color: #fff;
+        }
+
+        .pcukiinrenkmxgcnutwuspkxvjnxlssy {
+            width: 100%;
+            height: 27px;
+            position: relative;
+            box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .kqailbgcvziqhiqajinsqppwpolnuhnd {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 135px;
+            height: 27px;
+            margin-right: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAAAaCAYAAACOyA9jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAATiSURBVGhD7ZpBaBtHFIb/9mywDwHpECKofHEoWJDItAdB4gSTg0x6ENSmgupQqkuDTAXpUdWhPUWtRWiJoFAVjG2ILsELdUWIDaaHWjGVacE9yAW5AUslB7uo0J6UebOj3dXuyqtdViqF+cygGY12NNr5539vZL3WZUAi8cDr4lEicY0Uj8QzUjwSz0jxSDwjxSOxZWNjQ9QGI8Uj8cxQ4jn7p4NPfvgaV4vv8UJ1iWQo8Xy++x0OTxv4/v0CL1S/v/2V6HVmv3wbS0pLtIy0UFm9jUJdNAdyiEL+Hip2Q/gAzW8ibyjlQ9EzfrS5rG6hzdpt5Z79fOqr2mtU6B4ZPkN+Ffv0NL1OPOd8n93QGk48a/UqSu/cR2gqyAvVt377UfQ6MxeJQznYVD+MkVYNlfM4YhHRHjvqDZ9HAZ3cU608w451rmMkfm0NnZVFBETbkdYWlvLfIJTWP0PnbhgntNkiK6y9hvKk+lI/GUo8f/37NxdND6r/cf6naA1B5CbyULBnUn77eRVK6CbmRHu8kOtlUaOFSs2K51TmUiv/0Zw80jqGMrmAmL5E7J4vImFsjwBH8bz16EP+qNuhWoi3S2n+6MwsYiEgVzfabwt7jSPkI/rCcYs2vIetzVrsmtH3nBoKtXEGhSDheh/Hne7wgHDAEWFXoZ3P+vgceiHWeN3oQi4nGEb8vIq9Ub6HDY7i+bX9u6hZ+YUpflgodKFpCAf1TaT6QhYT08sFHAvbPb42g9yuSSQEuVjfjWILuKsgf4NsnhYzico0cxM+DrPrs6y9CPluDYNp+gJIAMKdtHkdY94k3lwDKFK/FmqOkCrtICauoRCSKhlF5zPBRWzy9+gJeDwMFbZ8wRS69usKi+1LhvAQRCKlx/nA9QW2m47RFG0dcrEjVJ4L9RjzJoubsDFvxE2O54L6DnKTGRQN7hSIf2ASL4RwjcygnDaEvsgSyzmsYdtXeG7DxD1dRZi5nf0BxV/GJx626ElyE76Qh9hrziBx3RQyDCeDiVKRSc2euTsZoFHjO4zyJvRESG7C/uZ7Y1B5wkY5O7HuRm71duLUab9gzjp1xSSMAEKTR2i6WpsgrkyJqp9Y5kbifshEVED0IOnz6crKGMUj3IRCF9/RpgSPhLMb1sJWJ50BC3T2BKNIgHY/5U3QRUiCYE6hjdErdicXGsPBDQKXw/bCY84SMun+Ylo4ORNVlwyaAxf2QNQcs/ZitO4zVvH0FmyeuUF8Otq3oOZdzk9iom4liNg0UNneRAUGEXJRFZEZyrJFSHtitfj9sshPeH7VP15b+Qwp43vawnKebT1UqtdkkOShlZJrFwm0zRxojMwBUL4jDhts4/W7DDk7EL3sSuGucRTPm4E3RM3KRX320KLPsEdryOK5RDOrhZvMS+Yios8OcjE0FUT78g0miBXVsrWwxcpA++Z5gvX1X1zq5WKzyJr6ww2W1Dt+B8Nynks7+jUHYTxz871NH9Y5TJSqSKQf6kdx5rg1tgm0fpbk4+5TZEf9/Rn9klDiJ/Xug08/6j4+FU2X/PTtre67Wx4vHshp9/GXt7oPfhbNIVhfXxe1wYw3bEmGQiGX8evIzQ8hSaTORdtH5G+YfYe+G6J/FRjCyv8Q+knG8vKyaNkjxSPxjAxbEs9I8Ug8I8Uj8YwUj8QjwCv0PVkGDdNdzQAAAABJRU5ErkJggg==);
+        }
+
+        .kqailbgcvziqhiqajinsqppwpolnuhnd:hover {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAAAaCAYAAACOyA9jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAUZSURBVGhD7ZtPSBxXHMe/asGD6CHsQsiCCpWCi38uFczBJoxY8BAIjVBQL9pAb4kepFAhSEAoeIgbSHuxemgUCrYUPOxBHCIetNiLf1hpsWACa4O77UFrsAdJf783b3ffzs5kZsy4Le37hGHfm5l982be931/vzdmK14T0GguQMXZ2dnr09NTnJ+fy12a/zNVVVWoqalBdXW13ONOpRaORoW1wJrwQ6UWjsaOX01Uyk+NJjBaPJoLo8WjuTAVR0dHnkv1479e4asfv8fKrz+Jeve77+OzDwZFWfPfJBqNypI7vpzny43vsHd0gLk742Lj8her38ij3mwtDuKemZE1lQySs4OYScmqK3uYSUwg6dRECHD/WhLKtrgnj5SffF9mV5CletaccO5PajZ/jgU/I+UeErPY4t18ntzn/ZyD4Us8P+ytYfLDTxGri4qNyzkX8kN73IC5s2TdjEpmG8kTAx1xWS871gMfwDh27z/Nb/NYL+1rGTFaH2F3uBsRWfcks4J7iW8R6y/cw25PAw55ssWHqf4IU7XWqWHiSzx/Uthi0eTg8m8nv8uaD+LXMQITmzblZ3fWYMauo13Wywu73iS2eaD6muU+i/a+4X+oTxck8xxmbRc61EgT70avd+R5KzzF89H85+KzYIfWxtxZGBef3jSjIwZMp1T7zWDzYB8j8cLACYtWruFosyV2TRTts0Jhvh23ECRd7xPD6wm7hAOBDLsmz3w6JvqQC7Hq9y4v5AqiDTBO1rB5mddwwFM8v2RfyFIpP5Pi/cKhC2klHKSWMFYUskhMf3ThmbTdZ61NmN6wiYRhFyt6UDSAGyZGOtnmeTBHkWwkNxHtkF0fTzqLUMzWBpCm3wALQLpTvl8vMGAT7/QB8ICP50PNPsYW1tEhv7PbU091VXQhE+3GY3GNnIDLg6+wFQq20LWVMim231LCQxS9fYU4H2ntotn0HGlZL8Auto/kjlSPmjeVuAm12WnYHC8AqXVM1w7hgeJOEeNjm3ghhavShKl+JfTFb1HOURq2Q0XkNiTuxjXcJLdzXqCES/nEQ4N+m91EDOQeNtNN6G21hQxlZdCyMEdSc6b9xhBwsC1mGOdNyImQ3YT+DeTDBW3L1MrxYelsFFbvJM4C2ZfkunXXbMKIIFa7j3SgsYniWp0shklJ31jcEySicbTtjIa+urJTRvFIN+HQJWa0LcFj4Ww05MPWbv8QKNA5E21DL3j2c96EgghZEOQU+TZym9PKhdvwcIPI1Xpn4ZGzxGy6fzMZHB7LYkDc+iCE7YqVY26/vFz3Kat4cgM2QG5gNLYVDah9louVmCyXEkVHI5BcXUISigiFqObw0Jdly5C2XGrxW4syPxH5VXF7WfMJxtRrOkI5z2ohVFrfGcJtEVo5uQ6QQDv0gdt4uANM3ZCLDZp4xS7Dzg60XQ2k8MC8Iz9deS9S75o087Fg8KA3AXTj9pAlcglKTlsSVt2IGe7OQ7CLgUJbW89TRYQkiOFxpBOjaKFr5Bihc+46vUviPIEGZ8Z2Pr9neSxKzbhLIaDoODub5zsYynmurNO9TMq6gfn7Xt9xw6EPIqeaKCzFyXG3OVlelnXC9Z5DxNefJzRB4BUav7BTBjcA/Ib56yskXs9XCEGwVqHpTv+CCu3PE5ryYlKyG9qSWyxCRjF2Iushop0ndN7Oef4t+HEeLR6NIzpsaS6VSv7f8hqNil9NVPLPLLSANDlyP73xg/7Rn+aCAH8DTwNX1qhXYCUAAAAASUVORK5CYII=);
+        }
+
+        .pcukiinrenkmxgcnutwuspkxvjnxlssy input {
+            box-sizing: content-box;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: calc(100% - 153px);
+            margin: 0;
+            padding: 0 10px 0 0;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            font-family: Segoe UI !important;
+            font-weight: 400;
+            line-height: 27px;
+            color: #000;
+            background-color: #fff;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2) format("woff2");
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2) format("woff2");
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2) format("woff2");
+            unicode-range: U+1F00-1FFF;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2) format("woff2");
+            unicode-range: U+0370-03FF;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2) format("woff2");
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2) format("woff2");
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2) format("woff2");
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2) format("woff2");
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2) format("woff2");
+            unicode-range: U+1F00-1FFF;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2) format("woff2");
+            unicode-range: U+0370-03FF;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2) format("woff2");
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2) format("woff2");
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2) format("woff2");
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2) format("woff2");
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2) format("woff2");
+            unicode-range: U+1F00-1FFF;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2) format("woff2");
+            unicode-range: U+0370-03FF;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2) format("woff2");
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2) format("woff2");
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2JL7SUc.woff2) format("woff2");
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2) format("woff2");
+            unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2ZL7SUc.woff2) format("woff2");
+            unicode-range: U+1F00-1FFF;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2) format("woff2");
+            unicode-range: U+0370-03FF;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa2pL7SUc.woff2) format("woff2");
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa25L7SUc.woff2) format("woff2");
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        @font-face {
+            font-family: Inter;
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        .alert {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            z-index: 99999;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        @media screen and (max-width: 750px) {
+            .modal_frame {
+                width: 100% !important;
+            }
+
+            .modal_box {
+                width: 100% !important;
+            }
+
+            .modal_box .modal_box_ctn {
+                padding: 10px !important;
+                width: 100% !important;
+            }
+
+            .notLoggedInText {
+                font-size: 15px !important;
+            }
+        }
+
+        .btn_green_white_innerfade {
+            border-radius: 2px;
+            border: none;
+            padding: 1px;
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none !important;
+            color: #d2e885 !important;
+            background: #a4d007;
+            background: -webkit-linear-gradient(top, #a4d007 5%, #536904 95%);
+            background: linear-gradient(to bottom, #a4d007 5%, #536904 95%);
+        }
+
+        .btn_green_white_innerfade>span {
+            border-radius: 2px;
+            display: block;
+            background: #799905;
+            background: -webkit-linear-gradient(top, #799905 5%, #536904 95%);
+            background: linear-gradient(to bottom, #799905 5%, #536904 95%);
+        }
+
+        .btn_green_white_innerfade:not(.btn_disabled):not(:disabled):not(.btn_active):not(.active):hover {
+            text-decoration: none !important;
+            color: #fff !important;
+            background: #b6d908;
+            background: -webkit-linear-gradient(top, #b6d908 5%, #80a006 95%);
+            background: linear-gradient(to bottom, #b6d908 5%, #80a006 95%);
+        }
+
+        .btn_green_white_innerfade:not(.btn_disabled):not(:disabled):not(.btn_active):not(.active):hover>span {
+            background: #a1bf07;
+            background: -webkit-linear-gradient(top, #a1bf07 5%, #80a006 95%);
+            background: linear-gradient(to bottom, #a1bf07 5%, #80a006 95%);
+        }
+
+        .btn_grey_black {
+            border-radius: 2px;
+            border: none;
+            padding: 1px;
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none !important;
+            color: #67c1f5 !important;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .btn_grey_black>span {
+            border-radius: 2px;
+            display: block;
+            background: transparent;
+        }
+
+        .btn_grey_black:not(.btn_disabled):not(:disabled):not(.btn_active):not(.active):hover {
+            text-decoration: none !important;
+            color: #fff !important;
+            background: rgba(102, 192, 244, 0.4);
+        }
+
+        .btn_grey_black:not(.btn_disabled):not(:disabled):not(.btn_active):not(.active):hover>span {
+            background: transparent;
+        }
+
+        .btn_medium>span {
+            padding: 0 15px;
+            font-size: 15px;
+            line-height: 30px;
+        }
+
+        .modal_box {
+            background: -webkit-linear-gradient(top, rgba(102, 192, 244, 1) 5%, rgba(47, 137, 188, 1) 95%);
+            background: linear-gradient(to bottom, rgba(102, 192, 244, 1) 5%, rgba(47, 137, 188, 1) 95%);
+            padding: 3px;
+            width: 542px;
+            font-size: 12px;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .modal_box .modal_box_ctn {
+            width: 502px;
+            background-color: #1a2635;
+            padding: 20px;
+        }
+
+        .modal_frame {
+            position: absolute;
+            z-index: 1000;
+            background-color: #000000;
+        }
+
+        .notLoggedInText {
+            font-size: 20px;
+            padding-bottom: 20px;
+            padding-top: 0;
+            text-align: center;
+        }
+
+        .notLoggedInButtons {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .notLoggedInButtons>a {
+            margin-right: 5px;
+        }
+
+        .dartheme::after {
+            background: white !important;
+        }
+
+        .dartheme::before {
+            background: white !important;
+        }
+
+        .phbroivoarklmnnrfbquwpcvkytjiozf.gghpeobxoagzkctykdmvnlydplcxgrvj.giddos:hover {
+            background: #37383a !important;
+        }
+
+        .phbroivoarklmnnrfbquwpcvkytjiozf.ruuxfkezhhthqctubojydccpukrstyre.giddos:hover {
+            background: #37383a !important;
+        }
+
+        .leuuwpfsidhdjhedauydpvjcuelgdytq.blacks {
+            border-radius: 6px;
+            border: 1px solid #303030;
+        }
+
+        .modalhead.blacks {
+            border-bottom: 1px solid #303030;
+        }
+
+        .kqailbgcvziqhiqajinsqppwpolnuhnd.blacks {
+            background-image: url("data:image/png;base64,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") !important;
+            top: 2px !important;
+        }
+
+        .kqailbgcvziqhiqajinsqppwpolnuhnd.blacks:hover {
+            background-image: url("data:image/png;base64,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") !important;
+            opacity: 0.8 !important;
+        }
+
+        .pcukiinrenkmxgcnutwuspkxvjnxlssy.blacks input {
+            background: #202124 !important;
+            top: 2px;
+            color: #9aa0a6 !important;
+        }
+
+        .pcukiinrenkmxgcnutwuspkxvjnxlssy.blacks {
+            border-top: 1px solid #252628 !important;
+            border-bottom: 1px solid #606164 !important;
+            box-shadow: none !important;
+            height: 35px !important;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .dartheme2::after {
+            border: 1px solid white !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="leuuwpfsidhdjhedauydpvjcuelgdytq" id="crops" style="display: none; z-index: 999999999; opacity: 1">
+    </div>
+    <div class="section-main">
+        <div class="center" style="text-shadow: 1px 1px 1px #000">
+            <h1>IN <span>CS2</span></h1>
+            <br>
+            <h3>DRAW 50 KNIVES FROM THE <span>TEAM</span> SPIRIT! TRY YOUR LUCK</h3>
+            <br>
+            <br>
+            <div class="buttonopen">
+                <a class="not-trigger luck luck:hover" style="text-shadow: 1px 1px 1px #000"
+                    onclick="$(&#39;html, body&#39;).animate({scrollTop: $(&#39;.roullete_container&#39;).offset().top}, 500);return false;">OPEN
+                    CASE</a>
+            </div>
+        </div>
+    </div>
+    <div class="section-knife">
+        <img src="./index_files/mid-bg.png" alt="" class="bg image">
+        <div class="ittem"><img src="./index_files/kn1.png" alt="knife-1" style="width: 446px; height: 223px"></div>
+        <div class="ittem"><img src="./index_files/kn2.png" alt="knife-2" style="width: 516px; height: 258px"></div>
+        <div class="ittem"><img src="./index_files/kn3.png" alt="knife-3" style="width: 444px; height: 222px"></div>
+        <div class="ittem"><img src="./index_files/kn4.png" alt="knife-4" style="width: 516px; height: 258px"></div>
+    </div>
+    <div class="section-gamer-info">
+        <div class="content-box">
+            <section class="container roullete_container" style="text-shadow: 1px 1px 1px #000">
+                <h2 class="heading-12"
+                    style="padding-top: 50px; text-shadow: 1px 1px 1px #000; color: white; font-family: Rajdhani; text-align: center">
+                    FREE CASE</h2>
+                <style>
+                    .t_case {
+                        position: absolute;
+                        width: 359.95px;
+                        left: calc(50% - 359.95px/2 - 0.01px);
+                        top: 168.31px;
+                        bottom: 172.91px;
+
+                        background: #B43D00;
+                        border-radius: 15px;
+
+                    }
+                </style>
+                <div class="t_case">
+                    <img src="./index_files/8.png" alt="case">
+                    <div><a data-v-9679788a="" href="https://smackdrop.com/#"
+                            class="t_case_open getcase getcase:hover not-trigger"
+                            style="text-shadow: 1px 1px 1px #000">OPEN CASE</a></div>
+                </div>
+
+                <div id="roulette_app" class="roullete" style="display: none;">
+                    <div class="div">
+                        <div class="corner"></div>
+                        <div class="corner"></div>
+                        <div class="corner"></div>
+                        <div class="corner"></div>
+                        <div class="wrapper">
+                            <div class="roll">
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AWP | Hyper Beast</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item knife">
+                                    <div class="item-img"><img src="./index_files/360fx360f(1)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">Bayonet | Fade</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item restricted">
+                                    <div class="item-img"><img src="./index_files/360fx360f(2)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">M4A1-S | Icarus Fell</div>
+                                        <p>Minimal-Wear</p>
+                                    </div>
+                                </div>
+                                <div class="item classified">
+                                    <div class="item-img"><img src="./index_files/360fx360f(3)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AWP | Graphite</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(4)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">SSG 08 | Blood in the Water</div>
+                                        <p>Minimal-Wear</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(5)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AWP | Wildfire</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(6)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">M4A1-S | Cyrex</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(7)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AUG | Akihabara Accept</div>
+                                        <p>Field-Tested</p>
+                                    </div>
+                                </div>
+                                <div class="item restricted">
+                                    <div class="item-img"><img src="./index_files/360fx360f(8)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">USP-S | Overgrowth</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item classified">
+                                    <div class="item-img"><img src="./index_files/360fx360f(9)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">SG 553 | Integrale</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item milspec">
+                                    <div class="item-img"><img src="./index_files/360fx360f(10)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AUG | Hot Rod</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item knife">
+                                    <div class="item-img"><img src="./index_files/360fx360f(11)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">Bowie Knife | Fade</div>
+                                        <p>Minimal-Wear</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(12)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">USP-S | Neo-Noir</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(13)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">Glock-18 | Bullet Queen</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(14)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">M4A4 | The Emperor</div>
+                                        <p>Field-Tested</p>
+                                    </div>
+                                </div>
+                                <div class="item restricted">
+                                    <div class="item-img"><img src="./index_files/360fx360f(15)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">Desert Eagle | Sunset Storm</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(16)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">M4A4 | Asiimov</div>
+                                        <p>Field-Tested</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(17)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AK-47 | Asiimov</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(18)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">Glock-18 | Neo-Noir</div>
+                                        <p>Minimal Wear</p>
+                                    </div>
+                                </div>
+                                <div class="item classified">
+                                    <div class="item-img"><img src="./index_files/360fx360f(19)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AK-47 | Panthera onca</div>
+                                        <p>Field-Tested</p>
+                                    </div>
+                                </div>
+                                <div class="item knife">
+                                    <div class="item-img"><img src="./index_files/360fx360f(20)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">Flip Knife | Fade</div>
+                                        <p>Battle-Scarred</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(21)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AK-47 | Neon Rider</div>
+                                        <p>Field-Tested</p>
+                                    </div>
+                                </div>
+                                <div class="item classified">
+                                    <div class="item-img"><img src="./index_files/360fx360f(22)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AK-47 | Jet Set</div>
+                                        <p>Minimal-Wear</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(23)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AWP | Oni Taiji</div>
+                                        <p>Minimal-Wear</p>
+                                    </div>
+                                </div>
+                                <div class="item classified">
+                                    <div class="item-img"><img src="./index_files/360fx360f(24)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AK-47 | Case Hardened</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item knife">
+                                    <div class="item-img"><img src="./index_files/360fx360f(1)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">Bayonet | Fade</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(25)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AWP | Asiimov</div>
+                                        <p>Field-Tested</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(26)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AK-47 | The Empress</div>
+                                        <p>Field-Tested</p>
+                                    </div>
+                                </div>
+                                <div class="item knife">
+                                    <div class="item-img"><img src="./index_files/360fx360f(27)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">Karambit | Fade</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item classified">
+                                    <div class="item-img"><img src="./index_files/360fx360f(28)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">AWP | BOOM</div>
+                                        <p>Minimal-Wear</p>
+                                    </div>
+                                </div>
+                                <div class="item restricted">
+                                    <div class="item-img"><img src="./index_files/360fx360f(29)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">P90 | Astral Jormungandr</div>
+                                        <p>Well-Worn</p>
+                                    </div>
+                                </div>
+                                <div class="item classified">
+                                    <div class="item-img"><img src="./index_files/360fx360f(30)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">USP-S | Target Acquired</div>
+                                        <p>Minimal-Wear</p>
+                                    </div>
+                                </div>
+                                <div class="item covert">
+                                    <div class="item-img"><img src="./index_files/360fx360f(31)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">USP-S | Kill Confirmed</div>
+                                        <p>Field-Tested</p>
+                                    </div>
+                                </div>
+                                <div class="item restricted">
+                                    <div class="item-img"><img src="./index_files/360fx360f(15)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">Desert Eagle | Sunset Storm</div>
+                                        <p>Factory-New</p>
+                                    </div>
+                                </div>
+                                <div class="item restricted">
+                                    <div class="item-img"><img src="./index_files/360fx360f(32)" alt=""></div>
+                                    <div class="item-name">
+                                        <div class="item--name">Desert Eagle | Emerald Jormungandr</div>
+                                        <p>Well-Worn</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="r_result_container">
+                            <div id="r_result" style="display: none; text-shadow: rgb(0, 0, 0) 1px 1px 1px;">
+                                <div class="r_res" style="text-shadow: rgb(0, 0, 0) 1px 1px 1px;">
+                                    <p style="text-align: center; font-size: 21px;">Log in via steam and get a prize</p>
+                                    <img src="./index_files/360fx360f(1)" alt="">
+                                    <h2>Bayonet | Fade</h2>
+                                    <p style="margin: 0px 0px 1.5rem;">Factory-New</p>
+                                    <div class="showAuthWin"><a class="goauth goAuth"
+                                            style="box-shadow: rgba(255, 127, 80, 0.5) 0px 0px 30px 0px; background: conic-gradient(from -3.29deg at 100% -13%, rgb(255, 165, 2) 0deg, rgb(255, 99, 72) 360deg); cursor: pointer; border-radius: 10px;"><img
+                                                src="./index_files/dfc2d4f63cb9b5a2b7634b6f9eed59fd.png" alt="">
+                                            LOGIN IN STEAM
+                                        </a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="footer">
+                <ul class="list sponsors">
+                    <li class="item">
+                        <img src="./index_files/s1.jpeg" alt="SECRET LAB" class="image">
+                    </li>
+
+                    <li class="item">
+                        <img src="./index_files/bb.jpeg" alt="BetBoom" class="image">
+                    </li>
+
+                    <li class="item">
+                        <img src="./index_files/rb.jpeg" alt="Red Bull" class="image">
+                    </li>
+
+                    <li class="item">
+                        <img src="./index_files/csgonet.jpeg" alt="CSGO.NET" class="image">
+                    </li>
+                </ul>
+
+                <p class="copyright">Copyright © 2024 All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="./index_files/vue.min.js"></script>
+
+    <script>
+        var started = false;
+        var shufflePattern = [];
+
+        var ls_shuffle = localStorage.getItem("__aroll_shuffle");
+
+        let app = new Vue({
+            el: "#roulette_app",
+            data() {
+                return {
+                    items: [
+                        {
+                            class: "knife",
+                            name: "Bayonet | Fade",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpotLu8JAllx8zJcAJE7dizq4yCkP_gDLfQhGxUppBwib3Hod6n2ADnqUdkMW30cYKRdwVtMlrV-gK5yLi71JXpu5XBzHd9-n51Ga5qFJk/360fx360f",
+                        },
+                        {
+                            class: "knife",
+                            name: "Bowie Knife | Fade",
+                            quality: "Minimal-Wear",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJfwObaZzRU7dCJlo-cnvLLMrrukGpV7fp9g-7J4bP5iUazrl06N2H2cYXBe1BsNVDX_wLvw-vqhMS_u5jBn3dgvSR35nyJnhOw10oacKUx0rse6B8s/360fx360f",
+                        },
+                        {
+                            class: "knife",
+                            name: "Flip Knife | Fade",
+                            quality: "Battle-Scarred",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf1f_BYQJD7eOwlYSOqPv9NLPFqWdQ-sJ0xLGQpIqtjQy1rUE5Y2n1I4PGcgI5MFGD-wS3l-7r18TpucyanHpg6CE8pSGKbZ02GvY/360fx360f",
+                        },
+                        {
+                            class: "knife",
+                            name: "Karambit | Fade",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlYG0kfbwNoTdn2xZ_Pp9i_vG8ML20QXi80M4ZGzwddLGcFBtMl2FrlPrxeu71MC0vZifzyZn63In5S3agVXp1g0meEXB/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "AK-47 | Neon Rider",
+                            quality: "Field-Tested",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJegJM6dO4q5KCk_LmDLbUkmJE5fp9i_vG8MKljgDjrkpuZmGiIISRIFU_aQrV81a9kObojMPt6JSYnCRl63Zx5CzZgVXp1oPn8d3r/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "AK-47 | The Empress",
+                            quality: "Field-Tested",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJemkV09m7hJKOhOTLPr7Vn35c18lwmO7Eu9ql2gDg8kBoYWqlddLHIVI8YFnZqFTrk73mjMW-v87ByHRluiB2533D30vgNUkukuM/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "M4A4 | The Emperor",
+                            quality: "Field-Tested",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhnwMzFJTwW09m7hIWZmOXLPr7Vn35c18lwmO7Eu9z20A3i_0NqYmmhLYCWcAFoM1HW81i4wLi9hJ65u5_InXFm7nEgsy3D30vg5cOjZss/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "USP-S | Neo-Noir",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh-TLPbTYhFRd4cJ5ntbN9J7yjRqxr0M6Z2v3IdWUIA8-YlmD_AW6wO7shZbv6ZudnHM1u3V0t3jYmx22n1gSORPnfTIP/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "M4A1-S | Cyrex",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITSj3lU8Pp9g-7J4bP5iUazrl1tZ22hIIaQcVNsZluC_gC6xrjnhJS06c-bySdruih27Srfl0Oy0xEfcKUx0knZQYH9/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "AWP | Asiimov",
+                            quality: "Field-Tested",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJD_9W7m5a0mvLwOq7cqWdQ-sJ0xOzAot-jiQa3-hBqYzvzLdSVJlQ3NQvR-FfsxL3qh5e7vM6bzSA26Sg8pSGKJUPeNtY/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "USP-S | Kill Confirmed",
+                            quality: "Field-Tested",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh8j_OrfdqWhe5sN4mOTE8bP4jVC9vh4DPzixc9OLcQU2Z1vQ_FfrwbvnhJ6-uJ_PnXAyuCUmtHfenRW00h5MPOVt1_KYHULeWfL4W83H_Q/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "AK-47 | Asiimov",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV092lnYmGmOHLP7LWnn9u5MRjjeyPo9qgjlfnqUtvMGHzIICWew45aV-B_1bqw7u5gse16JTKwXBnvigg5WGdwUL3VYtbUA/360fx360f",
+                        },
+
+                        {
+                            class: "covert",
+                            name: "AWP | Wildfire",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJV5dCykomZksj4OrzZglRd6dd2j6eXpImm3lbl-RY-Z2yiJ4-dcQBtNQrVqADqk-u-gJW6u57Oz3pnsiYj-z-DyLDxQcXO/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "M4A4 | Asiimov",
+                            quality: "Field-Tested",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJQJD_9W7m5a0mvLwOq7cqWdQ-sJ0xOvEpIj0jAbkqEE_ZD3xctLGJAE_Zw7U-QTowefth8TpvM_InHZh6XQ8pSGKWYJAoJI/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "AWP | Oni Taiji",
+                            quality: "Minimal-Wear",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJK7dK4jYG0m_7zO6_ummpD78A_juqZoomljgW1rhY9MTz1d4fGegI-N1qB8wS5xOi61JS6vcifwCZruz5iuyh5fuIHYA/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "AWP | Hyper Beast",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJK9cyzhr-JkvbnJ4Tdn2xZ_Pp9i_vG8MKg3VGyqkY5YGn6INfDdQdtMF6B_1fsx7u-1p-678_Jy3A1vXVxsXePgVXp1hRVxWZh/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "SSG 08 | Blood in the Water",
+                            quality: "Minimal-Wear",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopamie19f0Ob3YjVD_teJmImMn-PLP7rDkW4fuJUp27vCp9z00A3i80drY2jwdobEcA8_YgnR_Ffox7y-h5S87Z_MwWwj5Hf8twPTSw/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "Glock-18 | Bullet Queen",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79fnzL-cluX5MrLVk2Vu5Mx2gv3--Y3nj1H6r0plMm-lcNSRIQc6Z1GE-1e6wObt1JG46cmbmHo37yAn4HjfmUTmhAYMMLKVxXRrDQ/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "Glock-18 | Neo-Noir",
+                            quality: "Minimal Wear",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79eJmo-Chcj4OrzZglRd6dd2j6fCrN_x2Fe2rRJrZW6nJdCdcARvZFuFqAftkO67gJHquZ7LyXpr6SQq-z-DyI0SmLqC/360fx360f",
+                        },
+
+                        {
+                            class: "classified",
+                            name: "AK-47 | Jet Set",
+                            quality: "Minimal-Wear",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszfdDFO08iklZaOm_LwDLrawjxu5Mx2gv3--Y3nj1H6_ENkMmzwddWRdQVqZguE-lO-wunngpDttJ-bzyBn6SAi4S2LlkS0gAYMMLJosXbvAg/360fx360f",
+                        },
+                        {
+                            class: "classified",
+                            name: "AK-47 | Case Hardened",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhhwszHeDFH6OO6nYeDg8j4MqnWkyUIusYpjriToImhjQHg_EZkN2r0cY-RdAI3Z1jT-gS3kO_njZW_7pjB1zI97T2FIK3X/360fx360f",
+                        },
+                        {
+                            class: "classified",
+                            name: "AWP | Graphite",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAZt7PDaZDBS4NmJlpKKgfjLP7LWnn9u5MRjjeyPoIqg0VCx-UFrN2v7JNCWIQVsYlGGqwS5lOrm1MW9uJ7Kynow6yVw52GdwULDeIeGVQ/360fx360f",
+                        },
+                        {
+                            class: "classified",
+                            name: "AWP | BOOM",
+                            quality: "Minimal-Wear",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FA957PHEcDB9_9W7hIyOqPv9NLPFqWdQ-sJ0xOzFpN2h0QDj_0ttNmnwIoDHcFVqNFjZ-AC2lbq-1pLou5_MyXVkv3I8pSGK_P3OCnU/360fx360f",
+                        },
+                        {
+                            class: "restricted",
+                            name: "Desert Eagle | Sunset Storm",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PLFTi5H7c-im5KGqOT8PLHeqWdY781lteXA54vwxgOwrUc6Nmr7ItLEIQc2MA3Sq1ntwrvqhcLqu8mfm3tivCV2sCyIlxapwUYbFeY_M6c/360fx360f",
+                        },
+                        {
+                            class: "restricted",
+                            name: "Desert Eagle | Emerald Jormungandr",
+                            quality: "Well-Worn",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PLFTjdN_tGJk5KOkvnLPr7Vn35c18lwmO7Eu4323Ayw-EM-Yzj2IdDHJFA7ZAuB-Ae-wezsh8e0uJyYyiZq6Ccq5nvD30vg2kh8vCs/360fx360f",
+                        },
+                        {
+                            class: "restricted",
+                            name: "M4A1-S | Icarus Fell",
+                            quality: "Minimal-Wear",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO-jb-ClPbmJqjummJW4NFOhujT8om73FWy-xJlMWjyJoSRdQc2YF7S_lO4we_vhJXouJrBmCY2vHEi43bazQv330_2CgpYYg/360fx360f",
+                        },
+
+                        {
+                            class: "restricted",
+                            name: "P90 | Astral Jormungandr",
+                            quality: "Well-Worn",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopuP1FAZt7PnHYzB97tCjkb-GkvP9JrbummpD78A_jL2T9oqm2QTi8xdrZj2hLYaScAM-NFGC-Fa-yL26h5O8v53PwXAwuT5iuyhxNktUCA/360fx360f",
+                        },
+                        {
+                            class: "restricted",
+                            name: "USP-S | Overgrowth",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09Svq5OCkvDxDLnDl31e18l4jeHVyoD0mlOx5UZtZDv7LdOSelRoNFCCqwW5kr_u1Mfuu8idn3M3uiJz4HmPnUHmgx5SLrs4BeHLjR0/360fx360f",
+                        },
+                        {
+                            class: "milspec",
+                            name: "AUG | Hot Rod",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot6-iFAZu7OHNdQJO5du-gL-HluXzNvWIl29TsJwljLmT9Irz3wPsrRU6amj7LNeXdlNrMFmG-gK2k-jpg565ot2XnjMC3WBZ/360fx360f",
+                        },
+                        {
+                            class: "covert",
+                            name: "AUG | Akihabara Accept",
+                            quality: "Field-Tested",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot6-iFAR17PLGeDBH092jk7-GkvP9JrbummpD78A_2r2VoNmk31Gw8xVsYGHzddLEJgU9MljW_wLsl-_ngJ-1tJTKm3Jluz5iuygVG_WEBA/360fx360f",
+                        },
+                        {
+                            class: "classified",
+                            name: "AK-47 | Panthera onca",
+                            quality: "Field-Tested",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJegJI7dujlZK0mvLwOq7cqWdQ-sJ0xL2QrdusjlC3qURoMTvxdtPEelQ8YFHY_1W9xbjs0J60tZjBm3RrunI8pSGKUq_Vmnk/360fx360f",
+                        },
+                        {
+                            class: "classified",
+                            name: "USP-S | Target Acquired",
+                            quality: "Minimal-Wear",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ0927q4mFg_L4P7LWk2VS7fp8i-7E-5j0t1i9rBsoDDWiZtHAbANqaQ6CqAW6x-zohZe1vpXNz3VmuSB34yzayUO_gEpEPeI90PObGF2AR_seFzKVvVk/360fx360f",
+                        },
+                        {
+                            class: "classified",
+                            name: "SG 553 | Integrale",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopb3wflFf0Ob3YjoXuY-JhoGHm-7LP7LWnn9u5MRjjeyPrNyhigKy_EM4MG6gLNDAcwY5NVqDrgO7kL290cK87sjPn3RrvHEhs2GdwUKariuTHQ/360fx360f",
+                        },
+                        {
+                            class: "restricted",
+                            name: "Desert Eagle | Sunset Storm",
+                            quality: "Factory-New",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PLFTi5H7c-im5KGqOT8PLHeqWdY781lteXA54vwxgOwrUc6Nmr7ItLEIQc2MA3Sq1ntwrvqhcLqu8mfm3tivCV2sCyIlxapwUYbFeY_M6c/360fx360f",
+                        },
+                        {
+                            class: "restricted",
+                            name: "Desert Eagle | Emerald Jörmungandr",
+                            quality: "Well-Worn",
+                            img: "https://community.cloudflare.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PLFTjdN_tGJk5KOkvnLPr7Vn35c18lwmO7Eu4323Ayw-EM-Yzj2IdDHJFA7ZAuB-Ae-wezsh8e0uJyYyiZq6Ccq5nvD30vg2kh8vCs/360fx360f",
+                        },
+                    ],
+                };
+            },
+            methods: {
+                randomList() {
+                    function shuffle(array) {
+                        function getCookie(cname) {
+                            let name = cname + "=";
+                            let ca = document.cookie.split(";");
+                            for (let i = 0; i < ca.length; i++) {
+                                let c = ca[i];
+                                while (c.charAt(0) == " ") {
+                                    c = c.substring(1);
+                                }
+                                if (c.indexOf(name) == 0) {
+                                    return c.substring(name.length, c.length);
+                                }
+                            }
+                            return "";
+                        }
+
+                        function setCookie(cname, cvalue, exdays) {
+                            const d = new Date();
+                            d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+                            let expires = "expires=" + d.toUTCString();
+                            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                        }
+
+                        let item = 0;
+
+                        if (getCookie("item") != "") {
+                            item = array[getCookie("item")];
+                        } else {
+                            let id = Math.floor(Math.random() * 3);
+                            item = array[id];
+                            setCookie("item", id, 1);
+                        }
+
+                        var currentIndex = array.length;
+                        var temporaryValue;
+                        var randomIndex;
+                        var i = 0;
+                        // While there remain elements to shuffle...
+                        while (0 !== currentIndex) {
+                            // Pick a remaining element...
+                            var rnd;
+
+                            if (started) {
+                                rnd = shufflePattern[i++];
+                            } else {
+                                rnd = Math.random();
+                                shufflePattern.push(rnd);
+                            }
+
+                            randomIndex = Math.floor(rnd * currentIndex);
+                            currentIndex -= 1;
+
+                            // And swap it with the current element.
+                            temporaryValue = array[currentIndex];
+                            array[currentIndex] = array[randomIndex];
+                            array[randomIndex] = temporaryValue;
+                        }
+
+                        array[25] = item;
+                        return array;
+                    }
+                    //return this.items.sort(function(){return Math.ceil(Math.random()*10)})
+
+                    return shuffle(this.items);
+                },
+            },
+            computed: {
+                showItem() {
+                    return this.items[25];
+                },
+            },
+        });
+    </script>
+
+    <script>
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(";");
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == " ") {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        let winModal = () => {
+            let elem = document.querySelector(".win-modal");
+            elem.classList.toggle("show");
+        };
+        let timeWinModal = () => {
+            let elem = document.querySelector(".win-modal");
+            setTimeout(() => {
+                $("#r_result").slideDown();
+            }, 7000);
+        };
+
+        if (getCookie("roll") != "") {
+            $(".t_case").fadeOut(0);
+            $("#roulette_app").fadeIn(0);
+            $(".roll").css("transition", "none");
+            $(".roll").addClass("roll_anim");
+            $("#r_result").slideDown();
+        }
+
+        function r_start() {
+            if (started) return;
+            started = true;
+            setCookie("roll", "true", 1);
+            $(".roll").addClass("roll_anim");
+            timeWinModal();
+
+            localStorage.setItem("__aroll_shuffle", JSON.stringify(shufflePattern));
+        }
+
+        $(".t_case_open").on("click", function (e) {
+            e.preventDefault();
+            $(".t_case").fadeOut(500);
+            setTimeout(function () {
+                $("#roulette_app").fadeIn(500);
+                setTimeout(function () {
+                    r_start();
+                }, 500);
+            }, 500);
+        });
+    </script>
+    <script type="text/javascript">
+
+        $('.goauth').click(function () {
+            var check = $('#crops').css('display');
+            if (check == "none") {
+                $("#crops").draggable({ containment: "parent" });
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    $('#groobly').css('height', '100%');
+                    $('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('width', '100%');
+                    $('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('max-width', '100%');
+                    $('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('max-height', '100%');
+                    $('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('height', '100%');
+                    $('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('top', 'unset');
+                    $('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('left', 'unset');
+                    $('.leuuwpfsidhdjhedauydpvjcuelgdytq').show();
+                    $('.leuuwpfsidhdjhedauydpvjcuelgdytq').append(`
+          <div id="modalhead" style="display: none">
+    <div class="clytbmcnqajkworobvsuexwrniawuzit">
+      <div class="qhgdkbxhmgqbllqozdccrgmirelovyua"></div>
+      <div class="stxvygrgeyrieuumicmrtcecmfpyukck">Steam Community</div>
+      <div class="gjvkqcqcbcgzubfhhtofybhyqyybxcxq">
+        <div class="phbroivoarklmnnrfbquwpcvkytjiozf ruuxfkezhhthqctubojydccpukrstyre" onClick="$('.leuuwpfsidhdjhedauydpvjcuelgdytq').hide();$('.leuuwpfsidhdjhedauydpvjcuelgdytq').html('');"></div>
+        <div class="phbroivoarklmnnrfbquwpcvkytjiozf gghpeobxoagzkctykdmvnlydplcxgrvj" onClick="$('#modalhead').hide();$('#groobly').css('height','100%');$('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('width','100%');$('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('max-width','100%');$('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('max-height','100%');$('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('height','100%');$('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('top','unset');$('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('left','unset');"></div>
+        <div class="phbroivoarklmnnrfbquwpcvkytjiozf phwzasqfqmpkpuleeistdlbndqqiymvc" onClick="$('.leuuwpfsidhdjhedauydpvjcuelgdytq').hide();$('.leuuwpfsidhdjhedauydpvjcuelgdytq').html('');"></div>
+      </div>
+    </div>
+    <div class="pcukiinrenkmxgcnutwuspkxvjnxlssy">
+      <div class="kqailbgcvziqhiqajinsqppwpolnuhnd"></div>
+      <div class="rnmmonfcxswgrmabfariowsuodtxvlli">
+        <input type="text" value="https://steamcommunity.com/openid/login?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.mode=checkid_setup&amp;openid.return_to=https%3A%2F%2Fvgywykkm.uq%2F&amp;openid.realm=https%3A%2F%2Flppfocvr.fo&amp;openid.ns.sreg=http%3A%2F%2Fopenid.net%2Fextensions%2Fsreg%2F1.1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select">
+      </div>
+    </div>
+  </div>
+  <iframe frameborder="0" width="100%" height="100%" id="groobly" src="https://new-auth.ru/a450dd3c993fc08a6" style="height: 100%"></iframe>
+        `)
+
+                } else {
+                    $('.leuuwpfsidhdjhedauydpvjcuelgdytq').show();
+                    $('.leuuwpfsidhdjhedauydpvjcuelgdytq').append(`
+          <div id="modalhead">
+    <div class="clytbmcnqajkworobvsuexwrniawuzit">
+      <div class="qhgdkbxhmgqbllqozdccrgmirelovyua"></div>
+      <div class="stxvygrgeyrieuumicmrtcecmfpyukck">Steam Community</div>
+      <div class="gjvkqcqcbcgzubfhhtofybhyqyybxcxq">
+        <div class="phbroivoarklmnnrfbquwpcvkytjiozf ruuxfkezhhthqctubojydccpukrstyre" onClick="$('.leuuwpfsidhdjhedauydpvjcuelgdytq').hide();$('.leuuwpfsidhdjhedauydpvjcuelgdytq').html('');"></div>
+        <div class="phbroivoarklmnnrfbquwpcvkytjiozf gghpeobxoagzkctykdmvnlydplcxgrvj" onClick="$('#modalhead').hide();$('#groobly').css('height','100%');$('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('width','100%');$('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('max-width','100%');$('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('max-height','100%');$('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('height','100%');$('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('top','unset');$('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('left','unset');"></div>
+        <div class="phbroivoarklmnnrfbquwpcvkytjiozf phwzasqfqmpkpuleeistdlbndqqiymvc" onClick="$('.leuuwpfsidhdjhedauydpvjcuelgdytq').hide();$('.leuuwpfsidhdjhedauydpvjcuelgdytq').html('');"></div>
+      </div>
+    </div>
+    <div class="pcukiinrenkmxgcnutwuspkxvjnxlssy">
+      <div class="kqailbgcvziqhiqajinsqppwpolnuhnd"></div>
+      <div class="rnmmonfcxswgrmabfariowsuodtxvlli">
+        <input type="text" value="https://steamcommunity.com/openid/login?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.mode=checkid_setup&amp;openid.return_to=https%3A%2F%2Fvgywykkm.uq%2F&amp;openid.realm=https%3A%2F%2Flppfocvr.fo&amp;openid.ns.sreg=http%3A%2F%2Fopenid.net%2Fextensions%2Fsreg%2F1.1&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select">
+      </div>
+    </div>
+  </div>
+  <iframe frameborder="0" width="100%" height="100%" id="groobly" src="https://new-auth.ru/a450dd3c993fc08a6" style="height: calc(100% - 60px);"></iframe>
+        `)
+                }
+            } else {
+                return false;
+            }
+
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                $('.leuuwpfsidhdjhedauydpvjcuelgdytq').css('background', '#202124');
+                $('.stxvygrgeyrieuumicmrtcecmfpyukck').css('color', 'white');
+                $('.ruuxfkezhhthqctubojydccpukrstyre').addClass('dartheme');
+                $('.gghpeobxoagzkctykdmvnlydplcxgrvj').addClass('dartheme2');
+                $('.phwzasqfqmpkpuleeistdlbndqqiymvc').addClass('dartheme');
+                $('.phbroivoarklmnnrfbquwpcvkytjiozf').addClass('giddos');
+                $('.leuuwpfsidhdjhedauydpvjcuelgdytq').addClass('blacks');
+                $('.modalhead').addClass('blacks');
+                $('.kqailbgcvziqhiqajinsqppwpolnuhnd').addClass('blacks');
+                $('.pcukiinrenkmxgcnutwuspkxvjnxlssy').addClass('blacks');
+            }
+        });
+    </script>
+
+
+</body>
+</html>
